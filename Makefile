@@ -5,29 +5,25 @@
 #                                                     +:+ +:+         +:+      #
 #    By: anaciri <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/02/19 09:26:30 by anaciri           #+#    #+#              #
-#    Updated: 2022/02/19 10:16:43 by anaciri          ###   ########.fr        #
+#    Created: 2022/03/13 20:45:47 by anaciri           #+#    #+#              #
+#    Updated: 2022/03/24 10:00:43 by anaciri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fractol 
+CC = cc 
 
-SRC = try.c
-LIB = fractol.h
-OBJ = $(SRC:.c=.o)
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Werror -Wextra
 
-all : $(NAME)
+LDFLAGS = -lmlx -framework OpenGL -framework AppKit
 
-$(NAME) : $(OBJ) $(LIB)
-	gcc $(OBJ) -lmlx -framework OpenGL -framework AppKit -o $(NAME) 
+OBJ = main.o utils.o zoom.o
 
-%.o : %.c
-	gcc -Imlx -c $< -o $@ $(CFLAGS)
-	
-clean:
-	rm -f $(OBJ)
-fclean: clean
-	rm -f $(NAME)
+NAME = fractol
 
-re: fclean all
+all: $(NAME)
+
+$(NAME): $(OBJ) 
+	$(CC) $(LDFLAGS) $^ -o $@
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
