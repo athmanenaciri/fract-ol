@@ -1,33 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zoom.c                                             :+:      :+:    :+:   */
+/*   utlis_extra.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaciri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/26 16:28:43 by anaciri           #+#    #+#             */
-/*   Updated: 2022/03/28 10:35:03 by anaciri          ###   ########.fr       */
+/*   Created: 2022/03/28 13:59:45 by anaciri           #+#    #+#             */
+/*   Updated: 2022/03/28 16:14:45 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"fractol.h"
+#include "fractol.h"
 
-void	zoom_in(t_vars *vars)
+void	ft_putnbr(int nbr)
 {
-	vars->range -= vars->range * .1;
+	long	nb;
+	char	a;
+
+	nb = nbr;
+	if (nb < 0)
+	{
+		nb = -nb;
+		write(1, "-", 1);
+	}
+	else if (nb < 10)
+	{
+		a = nb + 48;
+		write(1, &a, 1);
+	}
+	else
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
 }
 
-void	zoom_out(t_vars *vars)
+void	ft_putstr(char *str)
 {
-	vars->range += vars->range * .1;
-}
+	int	i;
 
-int	zoom(int key, int x, int y, t_vars *vars)
-{
-	x = y;
-	if (key == 5)
-		zoom_in(vars);
-	else if (key == 4)
-		zoom_out(vars);
-	draw(vars);
-	return (1);
+	i = 0;
+	while (str[i])
+		i++;
+	write(1, str, i);
 }

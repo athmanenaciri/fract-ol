@@ -6,7 +6,7 @@
 #    By: anaciri <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/13 20:45:47 by anaciri           #+#    #+#              #
-#    Updated: 2022/03/24 10:00:43 by anaciri          ###   ########.fr        #
+#    Updated: 2022/03/28 14:01:41 by anaciri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 LDFLAGS = -lmlx -framework OpenGL -framework AppKit
 
-OBJ = main.o utils.o zoom.o
+OBJ = main.o utils.o event.o zoom.o utils_extra.o 
 
 NAME = fractol
 
@@ -27,3 +27,10 @@ $(NAME): $(OBJ)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJ)
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
