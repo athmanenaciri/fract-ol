@@ -20,7 +20,10 @@
 
 <p align="center"><img src="https://raw.githubusercontent.com/anaiel/fractol/master/fractals/Burning%20ship.png" alt="Burning ship" width="300"/></p>
 
+### Fractol pdf
 
-## Authors
+[fractol.pdf](https://github.com/athmanenaciri/fract-ol/files/8463326/fractol.pdf)
+
+### Authors
 
 * [anaciri](https://github.com/athmanenaciri)
