@@ -22,7 +22,7 @@
 
 ### Fractol pdf
 
-[fractol.pdf](https://github.com/athmanenaciri/fract-ol/files/8463326/fractol.pdf)
+* [fractol.pdf](https://github.com/athmanenaciri/fract-ol/files/8463326/fractol.pdf)
 
 ### Authors
 
