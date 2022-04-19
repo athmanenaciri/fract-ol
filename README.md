@@ -1,5 +1,7 @@
 # Fract-Ol
 
+![fract-ol](https://user-images.githubusercontent.com/91492137/164074071-0b7f68ab-daea-4c4b-b616-74602312761b.svg)
+
 
 ```
 ./fractol mandelbrot
